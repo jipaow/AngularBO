@@ -1,0 +1,8 @@
+.container{
+    /*margin: 2em;*/
+    padding: 2em;
+}
+.card{
+    display : flex;
+     transform: translate(0,35px);
+}

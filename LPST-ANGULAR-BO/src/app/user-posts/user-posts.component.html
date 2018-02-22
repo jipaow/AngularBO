@@ -1,0 +1,17 @@
+<div *ngIf="posts && posts.length>0" fxLayout="row" fxFlex="1 0 auto" fxLayoutAlign="center center">
+  <mat-card class="card">
+    <mat-list>
+      <mat-list-item *ngFor="let p of posts">
+       <a href="" (click)="selectPost(p.id); $event.preventDefault();">{{p.title}}</a>
+       <button mat-icon-button (click)="selectPost(p.id)"><mat-icon>visibility</mat-icon></button> 
+      </mat-list-item>
+    </mat-list>
+    <p *ngIf="posts && posts.length==0">
+      Aucun article
+    </p>
+  </mat-card>
+
+  <p *ngIf="!posts">Chargement...
+    <mat-spinner></mat-spinner>
+  </p>
+</div>
