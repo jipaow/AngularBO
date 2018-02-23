@@ -1,0 +1,36 @@
+<div *ngIf="post">
+  <h1 class="mat-h1" *ngIf="editing">Edition</h1>
+  <h1 class="mat-h1" *ngIf="!editing">Creation</h1>
+  <mat-card class="card">
+    <form #postForm="ngForm" (ngSubmit)="onSubmit()" fxLayout="column">
+      <mat-slide-toggle name="online" [(ngModel)]="post.online">{{post.online ? 'Online' :'Offline'}}</mat-slide-toggle>
+      <mat-form-field>
+        <input matInput type="text" name="title" [(ngModel)]="post.title" placeholder="Title">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="desc" [(ngModel)]="post.desc" placeholder="description">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="img" [(ngModel)]="post.img" placeholder="image">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="text" [(ngModel)]="post.text"placeholder="text">
+      </mat-form-field>
+      <p>Level :</p>
+      <mat-radio-group name ="level" [(ngModel)]="post.level">
+          <mat-radio-button [value]="1">Beginner</mat-radio-button>
+          <mat-radio-button [value]="2">Confirmated</mat-radio-button>
+          <mat-radio-button [value]="3">Expert</mat-radio-button>
+      </mat-radio-group>
+      <mat-form-field>
+          <mat-label>Tags</mat-label>
+          <mat-select  name ="level2" [(ngModel)]="post.tagIds" multiple>
+            <mat-option *ngFor="let t of tags" [value]="t.id">{{t.value}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+      <button mat-raised-button type="submit">{{editing ? 'UPDATE': 'CREATE'}}</button>
+    </form>
+  </mat-card>
+</div>
+

@@ -1,0 +1,14 @@
+<mat-card class="card">
+  <form #newUserForm="ngForm" (ngSubmit)="createUser()" fxLayout="column">
+  <mat-form-field>
+      <input matInput type ="text" name="name" [(ngModel)]="user.name" placeholder="name">
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput type ="text" name="job" [(ngModel)]="user.jobTitle" placeholder="job">
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput type ="text" name="img" [(ngModel)]="user.image" placeholder="image">
+  </mat-form-field>
+  <button mat-raised-button type="submit">envoyer</button>
+</form>
+</mat-card>

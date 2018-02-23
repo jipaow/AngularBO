@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container">
+  <mat-toolbar flxLayoutAlign="space-between">
+    <div fxFlex="1 0 auto">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <h1 class="app-name">Responsive App</h1>
+    </div>
+    <div>
+      <button mat-icon-button routerLink="users/create-user"><mat-icon>person_add</mat-icon></button>
+    </div>
+    
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav class="sidenav">
+      <mat-nav-list>
+        <a href="" routerLink="/users" mat-list-item>Users</a>
+        <a href="" routerLink="/posts" mat-list-item>Posts</a>
+        
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxLayout="column" fxLayoutAlign="space-between">
+      <div class="content" fxLayout="row" fxFlex="1 0 auto" fxLayoutAlign="center center">
+       <router-outlet></router-outlet>
+      </div>
+      <div class="footer" fxLayout="row" fxLayoutAlign="center center"><h3 class="mat-h3" style="color: white">FOOTER QUI TUE !</h3></div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
